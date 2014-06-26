@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head><meta charset="utf-8">
+        <title>jQuery Draggable Plugin</title>
+        <style>
+            body { padding: 30px; font: normal 16px sans-serif; }
+            .obj { position: absolute; background: #eee; line-height: 2; padding: 50px; text-align: center; }
+            .obj span { background: #aaa; padding: 5px; cursor: move; }
+        </style>
+    </head>
+    <body>
+        <h1>jQuery Draggable Plugin Demo</h1>
+        <p>Minimalistic and efficient draggable plugin for jQuery.</p>
+        <br>
+        <div style="position:relative">
+            <div id="o1" class="obj" style="top:0;left:0">Drag me!</div>
+            <div id="o2" class="obj" style="top:0;left:240px">Drag on<br><span>my handle</span>!</div>
+            <div id="o3" class="obj" style="top:0;left:500px">Drag<br><input type="text" value="neither me"><br><i id="exclude_me">nor me</i>!</div>
+        </div>
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="jquery.tiny-draggable.js"></script>
+        <script>
+            $('#o1').tinyDraggable();
+            $('#o2').tinyDraggable({ handle: 'span' });
+            $('#o3').tinyDraggable({ exclude: '#exclude_me, input' });
+        </script>
+    </body>
+</html>
