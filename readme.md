@@ -35,7 +35,7 @@ http://pixabay.com/blog/posts/draggable-jquery-colorbox-52/
 * `handle`: jQuery selector for all elements serving as grab handle
 * `exclude`: jQuery selector for elements that must not trigger the dragging event
 
-## Changelog:
+## Changelog
 
 ### Version 1.0.0-beta - 2014/06/26
 
