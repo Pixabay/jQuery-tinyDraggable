@@ -1,7 +1,7 @@
 jQuery-tinyDraggable
 ====================
 
-An extremely lightweight jQuery plugin (637 Bytes) for rendering absolute positioned DOM objects draggable. Here's a working demo on JSFiddle: http://jsfiddle.net/5p5Ct/
+An extremely lightweight jQuery plugin (450 Bytes) for rendering absolute positioned DOM objects draggable. Here's a working demo on JSFiddle: http://jsfiddle.net/5p5Ct/
 
 Usage is straightforward and - for the sake of simplicity and "tinyness" - only two options are available. The plugin was originally developed for adding draggability to jQuery Colorbox: https://github.com/jackmoore/colorbox.
 
