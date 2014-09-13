@@ -37,6 +37,6 @@ http://pixabay.com/blog/posts/draggable-jquery-colorbox-52/
 
 ## Changelog
 
-### Version 1.0.0-beta - 2014/06/26
+### Version 1.0.0 - 2014/06/26
 
 * First release

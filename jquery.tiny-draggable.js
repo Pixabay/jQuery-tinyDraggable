@@ -1,5 +1,5 @@
 /*
-	jQuery tinyDraggable v1.0.0-beta
+	jQuery tinyDraggable v1.0.0
     Copyright (c) 2014 Simon Steinberger / Pixabay
     GitHub: https://github.com/Pixabay/jQuery-tinyDraggable
     More info: http://pixabay.com/blog/posts/p-52/

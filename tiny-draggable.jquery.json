@@ -1,0 +1,30 @@
+{
+	"name": "tiny-draggable",
+	"title": "tinyDraggable",
+	"description": "Minimalistic and efficient draggable plugin for jQuery.",
+	"version": "1.0.0",
+	"dependencies": {
+		"jquery": ">=1.5"
+	},
+	"keywords": [
+		"draggable",
+		"drag",
+		"mouse",
+		"move",
+		"ui",
+		"jQuery"
+	],
+	"author": {
+		"name": "Simon Steinberger",
+		"url": "http://pixabay.com/users/Simon/",
+		"email": "simon@pixabay.com"
+	},
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "http://www.opensource.org/licenses/mit-license.php"
+		}
+	],
+	"homepage": "http://goodies.pixabay.com/jquery/tiny-draggable/demo.html",
+	"demo": "http://goodies.pixabay.com/jquery/tiny-draggable/demo.html"
+}
