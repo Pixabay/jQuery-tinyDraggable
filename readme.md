@@ -1,41 +1,28 @@
 jQuery-tinyDraggable
-====================
+===================
 
-An extremely lightweight jQuery plugin (450 Bytes) for rendering absolute positioned DOM objects draggable. Here's a working demo on JSFiddle: http://jsfiddle.net/5p5Ct/
+A minimalistic jQuery plugin for making objects draggable.
 
-Usage is straightforward and - for the sake of simplicity and "tinyness" - only two options are available. The plugin was originally developed for adding draggability to jQuery Colorbox: https://github.com/jackmoore/colorbox.
+Compatible with jQuery 1.5+ in Firefox, Safari, Chrome, Opera, Internet Explorer 7+. No dependencies except the jQuery library.
+Released under the MIT License: http://www.opensource.org/licenses/mit-license.php
 
-## Homepage
+This plugin was developed by and for [Pixabay.com](http://pixabay.com/) - an international repository for sharing free public domain images.
+We have implemented this plugin in production and we share this piece of software - in the spirit of Pixabay - freely with others.
 
-How the plugin can be used in combination with Colorbox is explained in detail here:
-http://pixabay.com/blog/posts/draggable-jquery-colorbox-52/
+## Demo and Documentation
 
-## Usage
+http://goodies.pixabay.com/jquery/tiny-draggable/demo.html
 
-1. Copy "jquery.tiny-draggable.js" to the corresponding asset directories in your project.
+## Features
 
-2. Include the JavsScript file in your HTML code; preferable towards the end of the page:
-
-        <script src='jquery.tiny-draggable.js'></script>
-
-   Remember to include jquery.tiny-draggable.js *after* loading jQuery itself.
-
-3. Initialise tinyDraggable on absolute positioned DOM elements:
-
-        <script>
-            $(function() {
-                $('#my_div').tinyDraggable();
-            });
-        </script>
-
-## Options
-
-    $(selector).tinyDraggable({ handle: 'handle selector', 'exclude': 'excluded items' });
-
-* `handle`: jQuery selector for all elements serving as grab handle
-* `exclude`: jQuery selector for elements that must not trigger the dragging event
+* Extremely lightweight: 0.5 kB of uncompressed JavaScript
+* Options for selecting and excluding drag handles
 
 ## Changelog
+
+### Version 1.0.1 - 2014/09/18
+
+* Minimized code even further by a few bytes.
 
 ### Version 1.0.0 - 2014/06/26
 

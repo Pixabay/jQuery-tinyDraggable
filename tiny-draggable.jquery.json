@@ -1,8 +1,8 @@
 {
 	"name": "tiny-draggable",
 	"title": "tinyDraggable",
-	"description": "Minimalistic and efficient draggable plugin for jQuery.",
-	"version": "1.0.0",
+	"description": "A minimalistic jQuery plugin for making objects draggable.",
+	"version": "1.0.1",
 	"dependencies": {
 		"jquery": ">=1.5"
 	},

@@ -1,28 +1,142 @@
-<!DOCTYPE html>
-<html>
-    <head><meta charset="utf-8">
-        <title>jQuery tinyDraggable Plugin</title>
-        <style>
-            body { padding: 30px; font: normal 16px sans-serif; }
-            .obj { position: absolute; background: #eee; line-height: 2; padding: 50px; text-align: center; }
-            .obj span { background: #aaa; padding: 5px; cursor: move; }
-        </style>
-    </head>
-    <body>
-        <h1>jQuery tinyDraggable Plugin Demo</h1>
-        <p>Minimalistic and efficient draggable plugin for jQuery.</p>
-        <br>
-        <div style="position:relative">
-            <div id="o1" class="obj" style="top:0;left:0">Drag me!</div>
-            <div id="o2" class="obj" style="top:0;left:240px">Drag on<br><span>my handle</span>!</div>
-            <div id="o3" class="obj" style="top:0;left:500px">Drag<br><input type="text" value="neither me"><br><i id="exclude_me">nor me</i>!</div>
+<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery tinyDraggable Plugin</title>
+    <meta name="description" content="A minimalistic jQuery plugin for making objects draggable.">
+    <link rel="shortcut icon" href="//pixabay.com/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <style>
+        body { margin: 0; padding: 0; border: 0; min-width: 320px; color: #777; }
+        html, button, input, select, textarea, .pure-g [class *= "pure-u"] { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1.02em; }
+        p, td { line-height: 1.5; }
+        ul { padding: 0 0 0 20px; }
+
+        th { background: #eee; white-space: nowrap; }
+        th, td { padding: 10px; text-align: left; vertical-align: top; font-size: .9em; font-weight: normal; border-right: 1px solid #fff; }
+        td:first-child { white-space: nowrap; color: #008000; width: 1%; font-style: italic; }
+
+        h1, h2, h3 { color: #4b4b4b; font-family: "Source Sans Pro", sans-serif; font-weight: 300; margin: 0 0 1.2em; }
+        h1 { font-size: 4.5em; color: #1f8dd6; margin: 0 0 .4em; }
+        h2 { font-size: 2em; color: #636363; }
+        h3 { font-size: 1.8em; color: #4b4b4b; margin: 1.8em 0 .8em }
+        h4 { font: bold 1em sans-serif; color: #636363; margin: 4em 0 1em; }
+        a { color: #4e99c7; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        p, pre { margin: 0 0 1.2em; }
+        ::selection { color: #fff; background: #328efd; }
+        ::-moz-selection { color: #fff; background: #328efd; }
+
+        @media (max-width:480px) {
+            h1 { font-size: 3em; }
+            h2 { font-size: 1.8em; }
+            h3 { font-size: 1.5em; }
+            td:first-child { white-space: normal; }
+        }
+
+        .inline-code { padding: 1px 5px; background: #eee; border-radius: 2px; }
+        pre { padding: 15px 10px; font-size: .9em; color: #555; background: #edf3f8; }
+        pre i { color: #aaa; } /* comments */
+        pre b { font-weight: normal; color: #cf4b25; } /* strings */
+        pre em { color: #0c59e9; } /* numeric */
+
+        /* Pure CSS */
+        .pure-button { margin: 5px 0; text-decoration: none !important; }
+        .button-lg { margin: 5px 0; padding: .65em 1.6em; font-size: 105%; }
+
+        /* tinyDraggable styles */
+        .draggable_container { position: relative; max-width: 760px; margin: auto; height: 180px; }
+        .obj { position: absolute; background: #ddd; padding: 20px; text-align: center; cursor: move; }
+        #item1, #item2 .handle, #item3 { cursor: move; color: #fff; background: #6ba72b; }
+        #item2 .handle, .obj .exclude_me { padding: 10px; border-radius: 2px; }
+        .obj .exclude_me { color: #777; background: #ddd; cursor: text; }
+    </style>
+</head>
+<body>
+    <div style="max-width:900px;padding:0 10px;margin:40px auto;text-align:center">
+        <h1>tinyDraggable</h1>
+        <h2>A minimalistic jQuery plugin for making objects draggable.</h2>
+        <a style="margin:5px 0" href="https://github.com/Pixabay/jQuery-tinyDraggable/archive/master.zip" class="pure-button pure-button-primary button-lg">Download</a>
+        &nbsp;
+        <a style="margin:5px 0" href="https://github.com/Pixabay/jQuery-tinyDraggable" class="pure-button button-lg">View on GitHub</a>
+    </div>
+    <div style="border-top: 1px solid #eee;border-bottom:1px solid #eee;background:#fafafa;margin:30px 0;padding:20px 5px">
+        <div class="draggable_container">
+            <div id="item1" class="obj" style="top:0;left:0;min-width:90px">Drag me!</div>
+            <div id="item2" class="obj" style="top:0;left:220px;min-width:120px;cursor:text">
+                <p>Selected Drag Handle</p>
+                <div class="handle">Drag Handle</div>
+            </div>
+            <div id="item3" class="obj pure-form" style="top:0;left:500px">
+                <p>Excluded Handles</p>
+                <p><input type="text" value="Excluded Text Input ..."></p>
+                <div class="exclude_me">Excluded Element</div>
+            </div>
         </div>
-        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script src="jquery.tiny-draggable.js"></script>
-        <script>
-            $('#o1').tinyDraggable();
-            $('#o2').tinyDraggable({ handle: 'span' });
-            $('#o3').tinyDraggable({ exclude: '#exclude_me, input' });
-        </script>
-    </body>
+    </div>
+    <div style="max-width:900px;margin:auto;padding:0 10px 50px">
+        <h3>Overview and Features</h3>
+        <p>
+            Released under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>.
+            Source on <a href="https://github.com/Pixabay/jQuery-tinyDraggable">Github</a> (<a href="https://github.com/Pixabay/jQuery-tinyDraggable#changelog">changelog</a>).
+            Compatible with jQuery 1.5+ in Firefox, Safari, Chrome, Opera, Internet Explorer 7+. No dependencies except the jQuery library.
+        </p>
+        <ul>
+            <li>Extremely lightweight: 0.5 kB of uncompressed JavaScript</li>
+            <li>Options for selecting and excluding drag handles</li>
+        </ul>
+        <p>
+            This plugin was developed by and for <a href="http://pixabay.com/">Pixabay.com</a> - an international repository for free Public Domain images.
+            We have implemented this piece of software in production and we share it - in the spirit of Pixabay - freely with others.
+        </p>
+
+        <h3>Usage</h3>
+        <p>
+            Include the JavsScript file <span class="inline-code">jquery.tiny-draggable.min.js</span> after loading the jQuery library.
+            tinyDraggable accepts settings from an object of key/value pairs, and can be assigned to any <b>absolute positioned</b> element.
+        </p>
+        <pre>
+$(selector).tinyDraggable({key1: value1, key2: value2});
+</pre>
+
+        <h3>Settings</h3>
+        <table>
+            <tr><th>Property</th><th>Default</th><th>Description</th></tr>
+            <tr><td>handle</td><td>null</td><td>jQuery selector for all elements serving as grab handle.</td></tr>
+            <tr><td>exclude</td><td>null</td><td>jQuery selector for elements that must not trigger the dragging event.</td></tr>
+        </table>
+
+        <h3 style="margin-top:.8em;border-top:1px solid #eee;padding-top:1.8em">Demo Source Code</h3>
+        <pre>
+$(<b>'#item1'</b>).tinyDraggable();
+$(<b>'#item2'</b>).tinyDraggable({ handle: <b>'.handle'</b> });
+$(<b>'#item3'</b>).tinyDraggable({ exclude: <b>'.exclude_me, input'</b> });</pre>
+
+        <br>
+        <p>How this plugin can be used in combination with <a href="http://www.jacklmoore.com/colorbox/">jQuery Colorbox</a> is explained in detail on this <a href="http://pixabay.com/blog/posts/id-52/">blog post</a>.</p>
+
+        <br><br>
+        <p style="border-top:1px solid #eee;padding-top:30px">Please report any bugs and issues at the <a href="https://github.com/Pixabay/jQuery-tinyDraggable">GitHub repositiory</a>.</p>
+        <p>This software is released as Open Source under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a> by <a href="http://pixabay.com/users/Simon/">Simon Steinberger / Pixabay.com</a>.</p>
+
+    </div>
+
+    <div style="background:#fafafa;border-top:1px solid #eee;padding:15px;font-size:.9em">
+        <div style="max-width:900px;margin:auto;padding:0 10px">
+            <a style="float:right;margin-left:20px" href="http://pixabay.com/en/service/about/">About Us</a>
+            <a style="float:right;margin-left:20px" href="http://pixabay.com/en/blog/">Blog</a>
+            <a style="float:right;margin-left:20px" href="http://goodies.pixabay.com/">More Goodies</a>
+            © <a href="http://pixabay.com/">Pixabay.com</a> / Simon Steinberger / Hans Braxmeier
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="jquery.tiny-draggable.js"></script>
+    <script>
+        $('#item1').tinyDraggable();
+        $('#item2').tinyDraggable({ handle: '.handle' });
+        $('#item3').tinyDraggable({ exclude: '.exclude_me, input' });
+    </script>
+</body>
 </html>
