@@ -20,6 +20,10 @@ http://goodies.pixabay.com/jquery/tiny-draggable/demo.html
 
 ## Changelog
 
+### Version 1.0.2 - 2014/10/22
+
+* Prevents previously selected text from getting unselected by dragging
+
 ### Version 1.0.1 - 2014/09/18
 
 * Minimized code even further by a few bytes.
