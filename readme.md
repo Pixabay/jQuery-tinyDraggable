@@ -22,7 +22,7 @@ http://goodies.pixabay.com/jquery/tiny-draggable/demo.html
 
 ### Version 1.0.2 - 2014/10/22
 
-* Prevents previously selected text from getting unselected by dragging
+* Prevents previously selected text from getting unselected by dragging.
 
 ### Version 1.0.1 - 2014/09/18
 
