@@ -15,7 +15,7 @@ http://goodies.pixabay.com/jquery/tiny-draggable/demo.html
 
 ## Features
 
-* Extremely lightweight: 0.5 kB of uncompressed JavaScript
+* Extremely lightweight: 0.5 kB of uncompressed, minified JavaScript
 * Options for selecting and excluding drag handles
 
 ## Changelog
