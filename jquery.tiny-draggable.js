@@ -2,7 +2,7 @@
 	jQuery tinyDraggable v1.0.2
     Copyright (c) 2014 Simon Steinberger / Pixabay
     GitHub: https://github.com/Pixabay/jQuery-tinyDraggable
-    More info: http://pixabay.com/blog/posts/p-52/
+    More info: https://pixabay.com/blog/posts/p-52/
 	License: http://www.opensource.org/licenses/mit-license.php
 */
 
